@@ -2,7 +2,7 @@
 This is the replication package for the paper titled "On Interaction Effects in Greybox Fuzzing" that is accepted at ICSE '26.
 
 <p align="center">
-  <img src="assets/overview.pdf" alt="Overview Figure" width="700"/>
+  <img src="assets/overview.png" alt="Overview Figure" width="700"/>
 </p>
 
 
