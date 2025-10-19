@@ -28,7 +28,7 @@ MuoFuzz is an extension of AFL++, so the setup required to run MuoFuzz is the sa
 ## FuzzBench
 We provide the code to run our FuzzBench experiments. The folder `fuzzbench/` is a fork of the [FuzzBench repo](https://github.com/google/fuzzbench) enriched with MuoFuzz, as well as the variations we experiment with in the ablation study (see [Ablation Study](#ablation-study) study below).
 
-Refer to `fuzzbench/README.md` for instruction on how setup FuzzBench and prepare the experiments (how to set the fuzzing time limit, where to find the outputs etc).
+Refer to the [official fuzzbench docs](https://google.github.io/fuzzbench/running-a-local-experiment) for instructions on how to setup FuzzBench and prepare the experiments (e.g., how to set the fuzzing time limit, where to find the outputs, etc).
 Then, to run for example MuoFuzz, AFL++, and MOPT in the `proj4_proj_crs_to_crs_fuzzer` target program, run
 ```sh
 PYTHONPATH=. python3 experiment/run_experiment.py --experiment-config experiment-config.yaml --concurrent-builds 8 --benchmarks proj4_proj_crs_to_crs_fuzzer --fuzzers  muofuzz aflplusplus aflplusplus_mopt  --runners-cpus 24 --measurers-cpus 2 --experiment-name myexpname
@@ -39,8 +39,8 @@ The thirteen benchmarks used in our paper are `proj4_proj_crs_to_crs_fuzzer`, `c
 ## MAGMA
 We provide the code to run our MAGMA experiments. The folder `magma/` is a fork of the [MAGMA repo](https://github.com/HexHive/magma) enriched with MuoFuzz.
 
-Refer to the [MAGMA docs](https://hexhive.epfl.ch/magma/docs/getting-started.html)  for instruction on how setup MAGMA and prepare the experiments (how to select fuzzers and target programs, where to find the outputs etc).
-Note that, some requirements for MAGMA may conflict with some requirements of FuzzBench (e.g. different docker installation). For this reason, we used different machines for the two benchmarks and suggest users to do the same.
+Refer to the [MAGMA docs](https://hexhive.epfl.ch/magma/docs/getting-started.html)  for instruction on how to setup MAGMA and prepare the experiments (how to select fuzzers and target programs, where to find the outputs etc).
+Note that the docker requirements of MAGMA may conflict with the docker requirements of FuzzBench, hence we used different machines for the two benchmarks.
 
 Then, to run for example MuoFuzz, AFL++, and MOPT in the `sqlite3` target program, edit the `magma/tools/captain/.captainrc` file as follows
 ```
@@ -59,7 +59,7 @@ Then, run `cd tools/captain/` and `./start.sh`.
 We use all available target programs, found under `magma/targets`.
 
 ## Ablation study
-Finally, we provide the code to run our Ablation Study experiments (Section 5.4 in the paper) in FuzzBench. For each column of Table 5, we provide a fuzzer in `fuzzbench/fuzzers/` than can be run as described in the [FuzzBench section](#fuzzbench)
+Finally, we provide the code to run our Ablation Study experiments (Section 5.4 in the paper) in FuzzBench. For each column of Table 5, we provide a fuzzer in `fuzzbench/fuzzers/` that can be run as described in the [FuzzBench section](#fuzzbench)
 
 
 
