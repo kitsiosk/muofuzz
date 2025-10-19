@@ -4,7 +4,7 @@ This is the replication package for the paper titled "On Interaction Effects in 
 ### Overview
 The standalone fuzzer exists under the `muofuzz/` directory. To make the replication of our results easier, we provide the code used for our FuzzBench[1] and MAGMA[2] experiments, under the `fuzzbench/` and `magma/` directories respectively.
 Finally, plots and figures that did not fit into the paper can be found under the `assets/` directory.
-Specifically, `assets/learned probability/` contains the learned probability for each target program (mentioned in Section 3.1 of the paper) and `assets/magma boxplots` contains one boxplot for each of the 43 MAGMA bugs (mentioned in Section 5.3 of the paper).
+Specifically, `assets/learned probability/` contains the learned probability for each target program (mentioned in Section 3.1 of the paper) and `assets/magma boxplots` contains one boxplot for each of the 43 MAGMA bugs (mentioned in Section 5.3 of the paper). Note that MuoFuzz is implemented on top of v4.21a of AFL++.
 
 ### Standalone Fuzzer
 MuoFuzz is an extension of AFL++, so the setup required to run MuoFuzz is the same as AFL++. The folder `muofuzz/` is a fork of the [AFL++ repo](https://github.com/AFLplusplus/AFLplusplus) containing all the necessary instructions to setup and run MuoFuzz, as one would do with AFL++.
@@ -20,7 +20,7 @@ PYTHONPATH=. python3 experiment/run_experiment.py --experiment-config experiment
 
 The thirteen benchmarks used in our paper are `proj4_proj_crs_to_crs_fuzzer`, `curl_curl_fuzzer_http`, `freetype2_ftfuzzer`, `bloaty_fuzz_target_52948c`, `php_php-fuzz-parser_0dbedb`, `libxml2_xml_e85b9b`, `sqlite3_ossfuzz`, `libpng_libpng_read_fuzzer`, `libpcap_fuzz_both`, `lcms_cms_transform_fuzzer`, `openssl_x509`, `re2_fuzzer`, `jsoncpp_jsoncpp_fuzzer`.
 
-#### MAGMA
+### MAGMA
 We provide the code to run our MAGMA experiments. The folder `magma/` is a fork of the [MAGMA repo](https://github.com/HexHive/magma) enriched with MuoFuzz.
 
 Refer to the [MAGMA docs](https://hexhive.epfl.ch/magma/docs/getting-started.html)  for instruction on how setup MAGMA and prepare the experiments (how to select fuzzers and target programs, where to find the outputs etc).
